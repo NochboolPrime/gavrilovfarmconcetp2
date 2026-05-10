@@ -1,0 +1,175 @@
+@import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600&family=Golos+Text:wght@400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 42 30% 95%;
+    --foreground: 35 25% 15%;
+    --card: 42 40% 97%;
+    --card-foreground: 35 25% 15%;
+    --popover: 42 40% 97%;
+    --popover-foreground: 35 25% 15%;
+    --primary: 42 70% 45%;
+    --primary-foreground: 35 30% 10%;
+    --secondary: 42 25% 88%;
+    --secondary-foreground: 35 25% 20%;
+    --muted: 42 20% 90%;
+    --muted-foreground: 35 15% 45%;
+    --accent: 42 70% 45%;
+    --accent-foreground: 35 30% 10%;
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 42 25% 82%;
+    --input: 42 25% 82%;
+    --ring: 42 60% 45%;
+    --radius: 0.5rem;
+    --sidebar-background: 35 30% 12%;
+    --sidebar-foreground: 42 30% 90%;
+    --sidebar-primary: 42 65% 55%;
+    --sidebar-primary-foreground: 35 30% 10%;
+    --sidebar-accent: 35 25% 20%;
+    --sidebar-accent-foreground: 42 30% 90%;
+    --sidebar-border: 35 20% 22%;
+    --sidebar-ring: 42 65% 55%;
+
+    --gold: #b8962e;
+    --gold-light: #d4aa4a;
+    --gold-pale: #e8c96a;
+    --cream: #f5f0e6;
+    --cream-mid: #ede5d0;
+    --cream-dark: #e0d4b8;
+    --sand: #c9b98a;
+    --dark: #2a2015;
+    --dark-mid: #4a3c22;
+    --dark-soft: #6b5835;
+    --text-muted: #8a7456;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Golos Text", sans-serif;
+    background-color: var(--cream);
+    color: var(--dark);
+    overflow-x: hidden;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Cormorant Garamond", serif;
+  }
+}
+
+@layer utilities {
+  .font-display {
+    font-family: "Cormorant Garamond", serif;
+  }
+  .font-body {
+    font-family: "Golos Text", sans-serif;
+  }
+
+  .text-gold {
+    color: var(--gold);
+  }
+  .text-dark-brand {
+    color: var(--dark);
+  }
+  .text-muted-brand {
+    color: var(--text-muted);
+  }
+
+  .bg-dark {
+    background-color: var(--dark);
+  }
+  .bg-dark-mid {
+    background-color: var(--dark-mid);
+  }
+  .bg-cream {
+    background-color: var(--cream);
+  }
+  .bg-cream-mid {
+    background-color: var(--cream-mid);
+  }
+  .bg-cream-dk {
+    background-color: var(--cream-dark);
+  }
+  .bg-gold {
+    background-color: var(--gold);
+  }
+
+  .border-gold {
+    border-color: var(--gold);
+  }
+  .border-sand {
+    border-color: var(--sand);
+  }
+
+  .animate-fade-in-up {
+    animation: fadeInUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+  }
+  .animate-fade-in-up-1 {
+    animation: fadeInUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.15s forwards;
+    opacity: 0;
+  }
+  .animate-fade-in-up-2 {
+    animation: fadeInUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.3s forwards;
+    opacity: 0;
+  }
+  .animate-fade-in-up-3 {
+    animation: fadeInUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.48s forwards;
+    opacity: 0;
+  }
+  .animate-fade-in-up-4 {
+    animation: fadeInUp 0.85s cubic-bezier(0.22, 1, 0.36, 1) 0.65s forwards;
+    opacity: 0;
+  }
+
+  .hover-lift {
+    transition:
+      transform 0.28s ease,
+      box-shadow 0.28s ease;
+  }
+  .hover-lift:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 14px 40px rgba(42, 32, 21, 0.13);
+  }
+
+  .divider-gold {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  }
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(26px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--cream);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--sand);
+  border-radius: 3px;
+}
