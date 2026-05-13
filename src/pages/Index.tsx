@@ -213,7 +213,7 @@ const SD = {
   "description": "Russian agricultural producer and grain processor with full-cycle control from farm to export.",
   "url": "https://gavrilovfarm.ru",
   "telephone": "+7-903-790-17-95",
-  "email": "info@gavrilovorganic.com",
+  "email": "gavrilovfoods.export@gmail.com",
   "address": { "@type": "PostalAddress", "addressRegion": "Smolensk Region", "addressCountry": "RU" },
   "areaServed": ["Europe","North America","Middle East","Latin America","Asia","Africa"],
 };
@@ -851,7 +851,7 @@ const Index = () => {
           <div className="grid md:grid-cols-4 gap-5 mb-10">
             {[
               { icon: "Phone",  label: t.contact.cards[0].label, value: "+7 903 790 17 95",       href: "tel:+79037901795" },
-              { icon: "Mail",   label: t.contact.cards[1].label, value: "info@gavrilovorganic.com", href: "mailto:info@gavrilovorganic.com" },
+              { icon: "Mail",   label: t.contact.cards[1].label, value: "gavrilovfoods.export@gmail.com", href: "mailto:gavrilovfoods.export@gmail.com" },
               { icon: "Globe",  label: t.contact.cards[2].label, value: "gavrilovfarm.ru",           href: "https://gavrilovfarm.ru" },
               { icon: "MapPin", label: t.contact.cards[3].label, value: "Smolensk Region, Russia",   href: "#" },
             ].map(c => (
@@ -1064,7 +1064,7 @@ const Index = () => {
                   <a href="tel:+79037901795" className="flex items-center gap-2 font-body text-sm" style={{ color: 'rgba(245,240,230,0.55)' }}>
                     <Icon name="Phone" size={13} style={{ color: 'var(--gold)' }} />+7 903 790 17 95
                   </a>
-                  <a href="mailto:info@gavrilovorganic.com" className="flex items-center gap-2 font-body text-sm" style={{ color: 'rgba(245,240,230,0.55)' }}>gavrilovfoods.export@gmail.com</a>
+                  <a href="mailto:gavrilovfoods.export@gmail.com" className="flex items-center gap-2 font-body text-sm" style={{ color: 'rgba(245,240,230,0.55)' }}>gavrilovfoods.export@gmail.com</a>
                   <div className="flex items-center gap-2 font-body text-sm" style={{ color: 'rgba(245,240,230,0.45)' }}>
                     <Icon name="MapPin" size={13} style={{ color: 'var(--gold)' }} />Smolensk Region, Russia
                   </div>
