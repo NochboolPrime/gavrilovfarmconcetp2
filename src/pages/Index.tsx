@@ -288,7 +288,7 @@ const Index = () => {
             <img src={LOGO_URL} alt="Gavrilov Foods logo" className="h-10 w-auto" />
 
             <div className="hidden md:flex items-center gap-7 font-body text-sm font-medium">
-              {([['#about', t.nav.about],['#products', t.nav.products],['#organic', t.nav.organic],['#export', t.nav.export],['#certifications', t.nav.certifications],['#private-label', t.nav.privateLabel],['#gallery', t.nav.gallery],['#contact', t.nav.contact]] as [string,string][]).map(([href, label]) => (
+              {([['#about', t.nav.about],['#products', t.nav.products],['#organic', t.nav.organic],['#export', t.nav.export],['#certifications', t.nav.certifications],['#private-label', t.nav.privateLabel],['#contact', t.nav.contact]] as [string,string][]).map(([href, label]) => (
                 <a key={href} href={href} className="hover:opacity-100 transition-opacity" style={{ color: 'rgba(245,240,230,0.75)' }}
                   onMouseEnter={e => (e.currentTarget.style.color = 'var(--gold-light)')}
                   onMouseLeave={e => (e.currentTarget.style.color = 'rgba(245,240,230,0.75)')}
@@ -317,7 +317,7 @@ const Index = () => {
 
           {menuOpen && (
             <div className="md:hidden flex flex-col px-4 pb-4 gap-0.5" style={{ borderTop: '1px solid rgba(184,150,46,0.15)' }}>
-              {([['#about', t.nav.about],['#products', t.nav.products],['#organic', t.nav.organic],['#export', t.nav.export],['#certifications', t.nav.certifications],['#private-label', t.nav.privateLabel],['#gallery', t.nav.gallery],['#contact', t.nav.contact]] as [string,string][]).map(([href, label]) => (
+              {([['#about', t.nav.about],['#products', t.nav.products],['#organic', t.nav.organic],['#export', t.nav.export],['#certifications', t.nav.certifications],['#private-label', t.nav.privateLabel],['#contact', t.nav.contact]] as [string,string][]).map(([href, label]) => (
                 <a key={href} href={href}
                   className="font-body text-sm font-medium py-3 px-3 rounded-lg"
                   style={{ color: 'rgba(245,240,230,0.8)' }}
@@ -353,7 +353,7 @@ const Index = () => {
             style={{ background: 'rgba(28,18,8,0.68)' }}
           />
 
-          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-14 w-full" style={{ paddingTop: '5rem', paddingBottom: '8rem' }}>
+          <div className="relative z-10 max-w-7xl mx-auto px-6 md:px-14 w-full" style={{ paddingTop: '5rem', paddingBottom: '11rem' }}>
             <div className="max-w-2xl">
               {/* Sub-label */}
               <div className="flex items-center gap-3 mb-6 animate-fade-in-up">
@@ -364,16 +364,28 @@ const Index = () => {
               </div>
 
               <h1
-                className="font-display font-light leading-tight mb-5 animate-fade-in-up-1"
-                style={{ fontSize: 'clamp(2.4rem,5.5vw,4.5rem)', color: '#fff', textShadow: '0 2px 16px rgba(0,0,0,0.55)' }}
+                className="font-display font-light leading-tight mb-3 animate-fade-in-up-1"
+                style={{ fontSize: 'clamp(2rem,4.8vw,4rem)', color: '#fff', textShadow: '0 2px 16px rgba(0,0,0,0.55)' }}
               >
-                {t.hero.h1a}<br />
-                <em style={{ color: 'var(--gold-light)' }}>{t.hero.h1b}</em>
+                {t.hero.h1a}
               </h1>
+              <p className="font-display font-bold mb-5 animate-fade-in-up-1" style={{ fontSize: 'clamp(1.05rem,2.2vw,1.45rem)', color: 'var(--gold)', letterSpacing: '0.06em', textShadow: '0 0 20px rgba(184,150,46,0.6), 0 2px 12px rgba(0,0,0,0.9)' }}>
+                {t.hero.h1b}
+              </p>
 
-              <p className="font-body text-base md:text-lg mb-6 animate-fade-in-up-2 font-medium" style={{ color: 'rgba(255,255,255,0.92)', maxWidth: 540, textShadow: '0 1px 8px rgba(0,0,0,0.5)' }}>
+              <p className="font-body text-base md:text-lg mb-6 animate-fade-in-up-2 font-medium" style={{ color: 'rgba(255,255,255,0.88)', maxWidth: 560, textShadow: '0 1px 8px rgba(0,0,0,0.5)', lineHeight: 1.6 }}>
                 {t.hero.sub}
               </p>
+
+              {/* Trust metrics */}
+              <div className="flex flex-wrap gap-2 mb-7 animate-fade-in-up-2">
+                {t.hero.trustMetrics.map((metric) => (
+                  <span key={metric} className="font-body text-xs font-semibold px-3 py-1.5 rounded-full"
+                    style={{ backgroundColor: 'rgba(184,150,46,0.18)', border: '1px solid rgba(184,150,46,0.45)', color: 'var(--gold-light)' }}>
+                    {metric}
+                  </span>
+                ))}
+              </div>
 
               {/* EU badge */}
               <div className="flex items-center gap-3 mb-8 animate-fade-in-up-2">
@@ -389,14 +401,13 @@ const Index = () => {
                 </div>
               </div>
 
-              <div className="flex flex-row gap-3 animate-fade-in-up-3">
-                <a href="#products" className="font-body font-semibold px-6 py-3.5 rounded-lg text-sm transition-opacity hover:opacity-85 whitespace-nowrap"
+              <div className="flex flex-row gap-2 animate-fade-in-up-3">
+                <a href="#products" className="font-body font-semibold px-4 py-2.5 md:px-6 md:py-3.5 rounded-lg text-xs md:text-sm transition-opacity hover:opacity-85 whitespace-nowrap"
                   style={{ backgroundColor: 'var(--gold)', color: 'var(--dark)' }}>
                   {t.hero.btnProducts}
                 </a>
                 <a href="#request"
-                  className="font-body font-medium px-6 py-3.5 rounded-lg text-sm transition-all whitespace-nowrap
-                    border md:border md:hover:bg-white/10"
+                  className="font-body font-medium px-4 py-2.5 md:px-6 md:py-3.5 rounded-lg text-xs md:text-sm transition-all whitespace-nowrap border md:hover:bg-white/10"
                   style={{
                     borderColor: 'rgba(245,240,230,0.35)',
                     color: 'var(--cream)',
@@ -409,12 +420,12 @@ const Index = () => {
           {/* Bottom strip */}
           <div
             className="absolute bottom-0 left-0 right-0 grid grid-cols-3 divide-x"
-            style={{ backgroundColor: 'rgba(42,32,21,0.88)', borderTop: '1px solid rgba(184,150,46,0.2)', divideColor: 'rgba(184,150,46,0.2)' }}
+            style={{ backgroundColor: 'rgba(28,20,10,0.95)', borderTop: '1px solid rgba(184,150,46,0.35)', divideColor: 'rgba(184,150,46,0.25)' }}
           >
             {t.hero.strip.map(item => (
-              <div key={item.title} className="py-5 px-6 text-center">
-                <div className="font-body text-xs font-semibold mb-0.5" style={{ color: 'var(--gold-light)' }}>{item.title}</div>
-                <div className="font-body text-xs" style={{ color: 'rgba(245,240,230,0.5)' }}>{item.sub}</div>
+              <div key={item.title} className="py-6 px-6 text-center">
+                <div className="font-body text-sm font-bold mb-1 tracking-wide" style={{ color: 'var(--gold-light)' }}>{item.title}</div>
+                <div className="font-body text-xs font-medium" style={{ color: 'rgba(245,240,230,0.65)' }}>{item.sub}</div>
               </div>
             ))}
           </div>
@@ -459,7 +470,7 @@ const Index = () => {
           <div className="grid grid-cols-2 md:grid-cols-4 gap-1">
             {[
               { src: "https://cdn.poehali.dev/files/a6b50e4f-9b2b-4f04-81b9-3712c3abf7fb.jpg", alt: "Combine harvester in the field" },
-              { src: "https://cdn.poehali.dev/files/62b224e7-f743-44a1-a822-5b3b8d06a4cf.jpg", alt: "Big bags warehouse storage" },
+              { src: "https://cdn.poehali.dev/files/51a8aa4e-5bcc-4e1e-8790-2bd61492fbb5.jpg", alt: "Kirovets tractor on the farm" },
               { src: "https://cdn.poehali.dev/files/dab19fe5-67e1-46c4-94e0-896a64670591.jpg", alt: "Processing equipment" },
               { src: "https://cdn.poehali.dev/files/08c99862-d2e2-428f-ba2a-a2a2eb054fd5.jpg", alt: "Buckwheat field in bloom" },
             ].map(img => (
